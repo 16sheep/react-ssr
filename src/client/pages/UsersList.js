@@ -22,11 +22,11 @@ class UsersList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.users)
     return { users: state.users }
 }
 
 const loadData = (store) => {
     return store.dispatch(fetchUsers())
 }
-export {loadData }
-export default connect(mapStateToProps, {fetchUsers})(UsersList)
+export default {loadData, component: connect(mapStateToProps, {fetchUsers})(UsersList)}

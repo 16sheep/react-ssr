@@ -10,6 +10,7 @@ export default (req, store) => {
     const content = renderToString(
         <Provider store={store}>
             <StaticRouter location={req.path} context={{}}>
+            {console.log(renderRoutes(Routes))}
                 <div>{renderRoutes(Routes)}</div>
             </StaticRouter>
         </Provider>
@@ -18,6 +19,7 @@ export default (req, store) => {
                 <head>
                     <body>
                         <div id="root">${content}</div>
+                        <script>window.INITIAL_STATE = ${JSON.stringify(store.getState())}</script>
                         <script src="bundle.js"></script>
                     </body>
                 </head>
