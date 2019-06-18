@@ -1,5 +1,7 @@
 import 'babel-polyfill'
 import express from 'express'
+import { matchRoutes } from './client/Routes'
+import Routes from './client/Routes'
 import renderer from './helpers/renderer'
 import createStore from './helpers/createStore'
 const app = express()
