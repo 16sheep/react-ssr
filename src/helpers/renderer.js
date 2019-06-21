@@ -11,7 +11,6 @@ export default (req, store) => {
     const content = renderToString(
         <Provider store={store}>
             <StaticRouter location={req.path} context={{}}>
-            {console.log(renderRoutes(Routes))}
                 <div>{renderRoutes(Routes)}</div>
             </StaticRouter>
         </Provider>
