@@ -4,7 +4,13 @@ import { matchRoutes } from 'react-router-config'
 import Routes from './client/Routes'
 import renderer from './helpers/renderer'
 import createStore from './helpers/createStore'
+import _getMongo from './read/mongo'
+
+console.log(_getMongo())
+
+
 const app = express()
+
 
 app.use(express.static('public'))
 app.get('*', (req, res) => {
